@@ -4,6 +4,10 @@ namespace MemoServer
 {
 	public class Memo
 	{
+		public long Id {
+			get;
+			set;
+		}
 		public string Message {
 			get;
 			set;
@@ -24,7 +28,7 @@ namespace MemoServer
 			set;
 		}
 
-		Memo(string message, string sender)
+		public Memo(string message, string sender)
 		{
 			this.Timestamp = DateTime.Now;
 			this.Message = message;

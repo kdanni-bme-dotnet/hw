@@ -5,7 +5,12 @@ namespace MemoServer
 {
 	public class User
 	{
-		public string username {
+		public long Id {
+			get;
+			set;
+		}
+
+		public string Username {
 			get;
 			set;
 		}
