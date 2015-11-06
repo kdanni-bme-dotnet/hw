@@ -1,5 +1,6 @@
 using System;
 using MySql.Data.MySqlClient;
+using System.Configuration;
 
 namespace MemoServer
 {
@@ -7,7 +8,7 @@ namespace MemoServer
 	{
 		public static void Main (string[] args)
 		{
-			string server = "192.168.92.1";
+			string server = ConfigurationManager.AppSettings["db.server"];
 			string connectionString = ConnectionString (server);
 
 			Console.WriteLine ("Memo service starting up...");
