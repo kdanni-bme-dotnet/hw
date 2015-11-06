@@ -20,6 +20,7 @@
     <WarningLevel>4</WarningLevel>
     <Externalconsole>true</Externalconsole>
     <PlatformTarget>x86</PlatformTarget>
+    <Commandlineparameters>-p DotNetPW</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>full</DebugType>
@@ -57,11 +58,13 @@
     <Compile Include="Entities\Memo.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="DbContext\MemoDbContext.cs" />
+    <Compile Include="MemoService\MemoService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="DbContext\" />
+    <Folder Include="MemoService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

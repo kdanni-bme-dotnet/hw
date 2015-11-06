@@ -1,19 +1,13 @@
 using System;
+using System.Data.Common;
 using MySql.Data.MySqlClient;
-using System.Configuration;
 
 namespace MemoServer
 {
 	class MainClass
 	{
-		public static void Main (string[] args)
-		{
-			string server = ConfigurationManager.AppSettings["db.server"];
-			string connectionString = ConnectionString (server);
-
-			Console.WriteLine ("Memo service starting up...");
-
-			using (MySqlConnection conn = new MySqlConnection(connectionString))
+		private static void Debug() {
+			using (DbConnection conn = MemoDbContext.getDbConnection())
 			{
 				// Create database if not exists
 				using (MemoDbContext contextDB = new MemoDbContext(conn, false))
@@ -22,7 +16,7 @@ namespace MemoServer
 				}
 
 				conn.Open();
-				MySqlTransaction transaction = conn.BeginTransaction();
+				MySqlTransaction transaction = (MySqlTransaction)conn.BeginTransaction();
 
 				try { 
 					using (MemoDbContext ctx = new MemoDbContext(conn, false))
@@ -45,20 +39,60 @@ namespace MemoServer
 					throw;
 				}
 			}
-			System.Console.WriteLine ("Memo Server Closing...");
 		}
 
-
-		
-		static string ConnectionString(string server)
+		public static void Main (string[] args)
 		{
-			string pwd = "password" ;
-			Console.Write("PWD: ");
-			pwd = Console.ReadLine();
+			if (args == null)
+			{
+				Usage ();
+			}
+			else
+			{
+				for (int i = 0; i < args.Length; i++) // Loop through array
+				{
+					if ("-h".Equals (args[i])) {
+						Usage ();
+						System.Environment.Exit(0);
+					}
+					if ("-s".Equals (args[i])) {
+						if(args.Length <= i+1 || args [i+1] == null){
+							continue;
+						}
+						MemoDbContext.DbPwd = args [i+1];
+					}
+					if ("-p".Equals (args[i])) {
+						if(args.Length <= i+1 || args [i+1] == null){
+							continue;
+						}
+						MemoDbContext.DbPwd = args [i+1];
+					}
+				}
+				if (MemoDbContext.DbPwd == null) {
+					Usage ();
+					System.Environment.Exit (1);
+				}
+			}
 
+			Console.WriteLine ("Memo service starting up...");
 
-			var connectionString = "server="+ server +";port=3306;database=dotnet2;uid=dotNet;password="+pwd+ ";Persist Security Info=True;";
-			return connectionString;
+			try {
+				Debug();
+			}
+			catch 
+			{
+				System.Console.WriteLine ("Something went wrong.");
+				System.Console.WriteLine ("Memo Server Closing...");
+				System.Environment.Exit(1);
+			}
+			System.Console.WriteLine ("Memo Server Closing...");
+		}
+		
+		private static void Usage() {
+			Console.WriteLine("Usage:");			
+			Console.WriteLine("\t-p\tdatabase password (required!)");
+			Console.WriteLine("\t-s\tdatabase server");
+			Console.WriteLine("\t-h\tthis help");
 		}
 	}
 }
