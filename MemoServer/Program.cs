@@ -7,8 +7,13 @@ namespace MemoServer
 	class MainClass
 	{
 		private static void Debug() {
+
+#region FirsTry
+			/*
+
 			using (DbConnection conn = MemoDbContext.getDbConnection())
 			{
+
 				// Create database if not exists
 				using (MemoDbContext contextDB = new MemoDbContext(conn, false))
 				{
@@ -39,6 +44,33 @@ namespace MemoServer
 					throw;
 				}
 			}
+			*/
+#endregion
+
+			using (MemoDbConnection conn = new MemoDbConnection())
+			{
+				conn.BeginTransaction();
+				try { 
+					using (MemoDbContext ctx = new MemoDbContext(conn.Connection, false))
+					{
+						ctx.Database.Log = (string message) => { Console.WriteLine(message); };
+						ctx.Database.UseTransaction(conn.Transaction);
+
+						Memo testMemo = new Memo("Hello", "d");
+
+						ctx.Memos.Add(testMemo);
+
+						ctx.SaveChanges();
+					}
+
+					conn.CommitTransaction();
+				}
+				catch
+				{
+					conn.RollbackTransaction();
+					throw;
+				}
+			}
 		}
 
 		public static void Main (string[] args)
@@ -59,16 +91,16 @@ namespace MemoServer
 						if(args.Length <= i+1 || args [i+1] == null){
 							continue;
 						}
-						MemoDbContext.DbPwd = args [i+1];
+						MemoDbConnection.DbPwd = args [i+1];
 					}
 					if ("-p".Equals (args[i])) {
 						if(args.Length <= i+1 || args [i+1] == null){
 							continue;
 						}
-						MemoDbContext.DbPwd = args [i+1];
+						MemoDbConnection.DbPwd = args [i+1];
 					}
 				}
-				if (MemoDbContext.DbPwd == null) {
+				if (MemoDbConnection.DbPwd == null) {
 					Usage ();
 					System.Environment.Exit (1);
 				}
