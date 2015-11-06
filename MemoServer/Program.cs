@@ -8,7 +8,7 @@ namespace MemoServer
 	{
 		private static void Debug() {
 
-#region FirsTry
+#region Archive
 			/*
 
 			using (DbConnection conn = MemoDbContext.getDbConnection())
@@ -44,8 +44,6 @@ namespace MemoServer
 					throw;
 				}
 			}
-			*/
-#endregion
 
 			using (MemoDbConnection conn = new MemoDbConnection())
 			{
@@ -71,6 +69,12 @@ namespace MemoServer
 					throw;
 				}
 			}
+			*/
+#endregion
+
+			var ms = new MemoService ();
+
+			ms.putMemo ("Hali", "d");
 		}
 
 		public static void Main (string[] args)
@@ -92,6 +96,24 @@ namespace MemoServer
 							continue;
 						}
 						MemoDbConnection.DbPwd = args [i+1];
+					}
+					if ("-P".Equals (args[i])) {
+						if(args.Length <= i+1 || args [i+1] == null){
+							continue;
+						}
+						MemoDbConnection.DbPort = args [i+1];
+					}
+					if ("-d".Equals (args[i])) {
+						if(args.Length <= i+1 || args [i+1] == null){
+							continue;
+						}
+						MemoDbConnection.DbDb = args [i+1];
+					}
+					if ("-u".Equals (args[i])) {
+						if(args.Length <= i+1 || args [i+1] == null){
+							continue;
+						}
+						MemoDbConnection.DbUser = args [i+1];
 					}
 					if ("-p".Equals (args[i])) {
 						if(args.Length <= i+1 || args [i+1] == null){
@@ -124,7 +146,10 @@ namespace MemoServer
 			Console.WriteLine("Usage:");			
 			Console.WriteLine("\t-p\tdatabase password (required!)");
 			Console.WriteLine("\t-s\tdatabase server");
-			Console.WriteLine("\t-h\tthis help");
+			Console.WriteLine("\t-P\tdatabase port");
+			Console.WriteLine("\t-d\tdatabase");
+			Console.WriteLine("\t-u\tdatabase user");
+			Console.WriteLine("\t-h\tdisplay this help");
 		}
 	}
 }

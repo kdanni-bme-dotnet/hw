@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace MemoServer
 {
+
 	public class User
 	{
 		public long Id {

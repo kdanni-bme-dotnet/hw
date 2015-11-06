@@ -9,7 +9,7 @@ namespace MemoServer
 	public class MemoService
 	{
 		[OperationContract]
-		public void putMemo(string message, string sender){
+		public void putPublicMemo(string message, string sender){
 			Memo memo = new Memo(message, sender);
 
 			using (MemoDbConnection conn = new MemoDbConnection())

@@ -60,6 +60,7 @@
     <Compile Include="Entities\User.cs" />
     <Compile Include="DbContext\MemoDbContext.cs" />
     <Compile Include="MemoService\MemoService.cs" />
+    <Compile Include="DbContext\MemoDbConnection.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -70,6 +71,5 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="app.config" />
   </ItemGroup>
 </Project>
