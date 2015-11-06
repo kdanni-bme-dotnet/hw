@@ -1,14 +1,10 @@
 using System;
-using System.ServiceModel;
-using System.Data.Common;
 using MySql.Data.MySqlClient;
 
 namespace MemoServer
 {
-	[ServiceContract]
-	public class MemoService
+	public class MemoService : IMemoService
 	{
-		[OperationContract]
 		public void putPublicMemo(string message, string sender){
 			Memo memo = new Memo(message, sender);
 
@@ -18,9 +14,11 @@ namespace MemoServer
 				try { 
 					using (MemoDbContext ctx = new MemoDbContext(conn.Connection, false))
 					{
+						User Anon = AnonymousUser.getAnon(ctx);
 						//ctx.Database.Log = (string log) => { Console.WriteLine(log); };
 						ctx.Database.UseTransaction(conn.Transaction);
 						ctx.Memos.Add(memo);
+						Anon.Memos.Add(memo);
 						ctx.SaveChanges();
 					}
 					conn.CommitTransaction();
@@ -31,7 +29,6 @@ namespace MemoServer
 					throw;
 				}
 			}
-
 		}
 	}
 }

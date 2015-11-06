@@ -74,7 +74,7 @@ namespace MemoServer
 
 			var ms = new MemoService ();
 
-			ms.putMemo ("Hali", "d");
+			ms.putPublicMemo ("Hali", "d");
 		}
 
 		public static void Main (string[] args)
@@ -82,6 +82,7 @@ namespace MemoServer
 			if (args == null)
 			{
 				Usage ();
+				System.Environment.Exit(1);
 			}
 			else
 			{
@@ -131,10 +132,13 @@ namespace MemoServer
 			Console.WriteLine ("Memo service starting up...");
 
 			try {
+				AnonymousUser.initAnon();
+
 				Debug();
 			}
-			catch 
+			catch(Exception e)
 			{
+				System.Console.WriteLine (e.StackTrace);
 				System.Console.WriteLine ("Something went wrong.");
 				System.Console.WriteLine ("Memo Server Closing...");
 				System.Environment.Exit(1);

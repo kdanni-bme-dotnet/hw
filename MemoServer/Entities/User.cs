@@ -6,6 +6,10 @@ namespace MemoServer
 
 	public class User
 	{
+		public User() {
+			this.Memos = new List<Memo> ();
+		}
+
 		public long Id {
 			get;
 			set;
@@ -29,10 +33,6 @@ namespace MemoServer
 		public List<Memo> Memos {
 			get;
 			set;
-		}
-
-		public User ()
-		{
 		}
 	}
 }

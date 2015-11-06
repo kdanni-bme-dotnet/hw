@@ -52,6 +52,8 @@
       <HintPath>..\packages\MySql.Data.Entity.6.9.8\lib\net40\MySql.Data.Entity.EF6.dll</HintPath>
     </Reference>
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -61,12 +63,15 @@
     <Compile Include="DbContext\MemoDbContext.cs" />
     <Compile Include="MemoService\MemoService.cs" />
     <Compile Include="DbContext\MemoDbConnection.cs" />
+    <Compile Include="UserManagement\AnonymousUser.cs" />
+    <Compile Include="MemoService\IMemoService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="DbContext\" />
     <Folder Include="MemoService\" />
+    <Folder Include="UserManagement\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

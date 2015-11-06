@@ -63,6 +63,10 @@ namespace MemoServer
 			Transaction.Rollback();
 		}
 
+#region Disposable
+		// Flag: Has Dispose already been called?
+		bool disposed = false;
+
 		public void Dispose() {
 			this.Dispose (true);
 			GC.SuppressFinalize (this);
@@ -82,9 +86,7 @@ namespace MemoServer
 			//
 			disposed = true;
 		}
-		// Flag: Has Dispose already been called?
-		bool disposed = false;
-
+#endregion
 	}
 }
 
