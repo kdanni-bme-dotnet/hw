@@ -1,0 +1,7 @@
+﻿http://stackoverflow.com/questions/8727293/http-could-not-register-url-http-8000-hellowcf-your-process-does-not-have
+
+netsh http add urlacl url=http://+:80/MyUri user=DOMAIN\user
+
+You can get more help on the details using the help of netsh
+
+For example: netsh http add ?
