@@ -30,7 +30,7 @@ namespace MemoServer
 
 		public Memo(string message, string sender)
 		{
-			this.Timestamp = DateTime.Now;
+			this.Timestamp = DateTime.UtcNow;
 			this.Message = message;
 			this.Sender = sender;
 			this.Unread = true;

@@ -1,5 +1,7 @@
 ﻿using System;
 using Gtk;
+using V37ZEN.Datagram;
+using System.Diagnostics;
 
 public partial class MainWindow: Gtk.Window
 {
@@ -35,5 +37,21 @@ public partial class MainWindow: Gtk.Window
 		this.chatField.Text = "";
 
 		this.chatLog.Buffer.InsertAtCursor (text);
+
+		try {
+			
+			using (DatagramServiceClient client = new DatagramServiceClient ("DatagramServiceConfig")) {
+
+				Datagram d = new Datagram ();
+				d.Timestamp = DateTime.UtcNow;
+				d.Message = text;
+				d.Metadata = "HW!";
+				client.ProcessDatagram (d);
+			}
+
+		} catch (Exception ex) {
+			Debugger.Log (0, Debugger.DefaultCategory, e.StackTrace.ToString ());
+		}
+
 	}
 }

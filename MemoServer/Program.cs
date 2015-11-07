@@ -76,7 +76,6 @@ namespace MemoServer
 
 			ms.putPublicMemo ("Hali", "d");
 
-			Console.Read (); 
 		}
 
 		public static void Main (string[] args)
@@ -148,6 +147,7 @@ namespace MemoServer
 				System.Environment.Exit(1);
 			}
 			System.Console.WriteLine ("Memo Server Closing...");
+			Console.Read (); 
 		}
 		
 		private static void Usage() {

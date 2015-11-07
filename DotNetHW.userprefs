@@ -1,11 +1,12 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MemoServer/Program.cs">
+﻿<Properties GitUserInfo="UsingGIT" StartupItem="Chat_Xamarin_GUI\Chat_Xamarin_GUI.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ActiveRuntime="MS.NET" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DebugServer\App.config">
     <Files>
-      <File FileName="MemoServer/DbContext/MemoDbContext.cs" Line="15" Column="4" />
-      <File FileName="MemoServer/Program.cs" Line="75" Column="32" />
-      <File FileName="MemoServer/MemoService/MemoService.cs" Line="17" Column="29" />
-      <File FileName="MemoServer/DbContext/MemoDbConnection.cs" Line="34" Column="52" />
+      <File FileName="Chat_Xamarin_GUI\MainWindow.cs" Line="1" Column="1" />
+      <File FileName="Chat_Xamarin_GUI\App.config" Line="1" Column="1" />
+      <File FileName="UDP_Chat\Serives\UDP Datagram\DatagramService.cs" Line="1" Column="1" />
+      <File FileName="DebugServer\App.config" Line="9" Column="23" />
+      <File FileName="s:\dotNet\DotNetHW-offical\DebugServer\Program.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
