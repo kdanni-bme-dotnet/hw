@@ -75,6 +75,8 @@ namespace MemoServer
 			var ms = new MemoService ();
 
 			ms.putPublicMemo ("Hali", "d");
+
+			Console.Read (); 
 		}
 
 		public static void Main (string[] args)
@@ -138,9 +140,11 @@ namespace MemoServer
 			}
 			catch(Exception e)
 			{
+				System.Console.WriteLine (e.Message);
 				System.Console.WriteLine (e.StackTrace);
 				System.Console.WriteLine ("Something went wrong.");
 				System.Console.WriteLine ("Memo Server Closing...");
+				Console.Read ();
 				System.Environment.Exit(1);
 			}
 			System.Console.WriteLine ("Memo Server Closing...");
