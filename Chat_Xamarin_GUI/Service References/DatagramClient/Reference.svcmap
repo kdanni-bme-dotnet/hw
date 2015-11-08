@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="75264b87-1b79-4dbe-8efd-9a98cc4beadf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fd6b6bfa-449b-4994-ae1c-8b30a77aeb54" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>false</GenerateTaskBasedAsynchronousMethod>
@@ -21,10 +21,10 @@
     <MetadataSource Address="http://localhost:8085/datagram" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="datagram.xsd" MetadataType="Schema" ID="67a065b5-6bb6-4922-aa30-0cde1db4b22e" SourceId="1" SourceUrl="http://localhost:8085/datagram?xsd=xsd0" />
-    <MetadataFile FileName="EchoDatagramService.wsdl" MetadataType="Wsdl" ID="246ecdae-86ee-44d7-b0d5-a55c4fe04255" SourceId="1" SourceUrl="http://localhost:8085/datagram?wsdl" />
-    <MetadataFile FileName="datagram0.xsd" MetadataType="Schema" ID="e42d08a9-e9f1-4390-8367-23a1b544d2b8" SourceId="1" SourceUrl="http://localhost:8085/datagram?xsd=xsd1" />
-    <MetadataFile FileName="datagram.disco" MetadataType="Disco" ID="86f7c39d-c647-487b-a1a4-b267e4a3f66e" SourceId="1" SourceUrl="http://localhost:8085/datagram?disco" />
-    <MetadataFile FileName="datagram1.xsd" MetadataType="Schema" ID="352606cb-9a8d-4ec0-a818-3dba46f6d609" SourceId="1" SourceUrl="http://localhost:8085/datagram?xsd=xsd2" />
+    <MetadataFile FileName="datagram.xsd" MetadataType="Schema" ID="c9648eba-33a2-4855-bafe-7ff4ab49df05" SourceId="1" SourceUrl="http://localhost:8085/datagram?xsd=xsd0" />
+    <MetadataFile FileName="EchoDatagramService.wsdl" MetadataType="Wsdl" ID="611b3ed0-885c-4a8e-b84e-7a72e8431113" SourceId="1" SourceUrl="http://localhost:8085/datagram?wsdl" />
+    <MetadataFile FileName="datagram0.xsd" MetadataType="Schema" ID="0a1ab44f-8f7c-4c08-926f-e0756d5b914e" SourceId="1" SourceUrl="http://localhost:8085/datagram?xsd=xsd1" />
+    <MetadataFile FileName="datagram.disco" MetadataType="Disco" ID="af5d5a6e-2947-4351-b8a3-fdf0bd563586" SourceId="1" SourceUrl="http://localhost:8085/datagram?disco" />
+    <MetadataFile FileName="datagram1.xsd" MetadataType="Schema" ID="236041ff-e2bd-45db-8f0e-13c9e03b0292" SourceId="1" SourceUrl="http://localhost:8085/datagram?xsd=xsd2" />
   </Metadata>
 </ReferenceGroup>

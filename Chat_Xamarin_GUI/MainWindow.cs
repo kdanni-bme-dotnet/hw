@@ -2,6 +2,7 @@
 using Gtk;
 using V37ZEN.Datagram;
 using System.Diagnostics;
+using System.ServiceModel;
 
 public partial class MainWindow: Gtk.Window
 {
@@ -38,19 +39,20 @@ public partial class MainWindow: Gtk.Window
 
 		this.chatLog.Buffer.InsertAtCursor (text);
 
-		try {
-			
-			using (DatagramServiceClient client = new DatagramServiceClient ("DatagramServiceConfig")) {
+		Datagram d = new Datagram ();
+		d.Timestamp = DateTime.UtcNow;
+		d.Message = text;
+		d.Metadata = "HW!";
 
-				Datagram d = new Datagram ();
-				d.Timestamp = DateTime.UtcNow;
-				d.Message = text;
-				d.Metadata = "HW!";
-				client.ProcessDatagram (d);
+		try {
+
+			using(DatagramServiceClient client = new DatagramServiceClient("DatagramClientUdpEndpoint")){
+
+				client.ProcessDatagram(d);
 			}
 
 		} catch (Exception ex) {
-			Debugger.Log (0, Debugger.DefaultCategory, e.StackTrace.ToString ());
+			Debugger.Log (0, Debugger.DefaultCategory, ex.Message + '\n' + ex.StackTrace.ToString ());
 		}
 
 	}

@@ -9,7 +9,7 @@
     <ProjectGuid>{AC1BD429-4C1F-4300-884F-2EDCECC9DF86}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
-    <OutputPath>.\</OutputPath>
+    <OutputPath>.</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <None Include="WCF register url.txt" />

@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Chat_Xamarin_GUI.DatagramService {
+namespace DebugClient.DatagramClient {
     
 }
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ServiceModel.ServiceContractAttribute(Namespace="Chat_Xamarin_GUI.DatagramService", ConfigurationName="IDatagramService")]
+[System.ServiceModel.ServiceContractAttribute(Namespace="DebugClient.DatagramClient", ConfigurationName="IDatagramService")]
 public interface IDatagramService {
     
-    // CODEGEN: Generating message contract since the wrapper namespace (http://tempuri.org/) of message ProcessDatagram does not match the default value (Chat_Xamarin_GUI.DatagramService)
+    // CODEGEN: Generating message contract since the wrapper namespace (http://tempuri.org/) of message ProcessDatagram does not match the default value (DebugClient.DatagramClient)
     [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IDatagramService/ProcessDatagram")]
     void ProcessDatagram(ProcessDatagram request);
     
