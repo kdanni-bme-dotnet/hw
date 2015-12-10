@@ -74,7 +74,7 @@ namespace MemoServer
 
 			var ms = new MemoService ();
 
-			ms.putPublicMemo ("Hali", "d");
+			ms.putPublicMemo ("Hali", "d" , "fsdfgsdfgsdf", new Uri("http://localhost.hu:25234"));
 
 		}
 

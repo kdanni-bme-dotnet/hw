@@ -7,7 +7,9 @@ namespace MemoServer
 	public interface IMemoService
 	{
 		[OperationContract]
-		void putPublicMemo (string message, string sender);
+		void putPublicMemo (string message, string nick, string hash, Uri clientUri);
+
+
 	}
 }
 

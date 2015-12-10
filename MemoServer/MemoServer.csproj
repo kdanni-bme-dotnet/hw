@@ -60,14 +60,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="DbContext\MemoDbContext.cs" />
-    <Compile Include="MemoService\MemoService.cs" />
     <Compile Include="DbContext\MemoDbConnection.cs" />
     <Compile Include="UserManagement\AnonymousUser.cs" />
-    <Compile Include="MemoService\IMemoService.cs" />
     <Compile Include="Entities\Memo.cs" />
     <Compile Include="Entities\Peer.cs" />
     <Compile Include="Entities\Status.cs" />
     <Compile Include="Entities\UserPeerAssociation.cs" />
+    <Compile Include="NickService\INickService.cs" />
+    <Compile Include="NickService\NickService.cs" />
+    <Compile Include="MemoService\IMemoService.cs" />
+    <Compile Include="MemoService\MemoService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -75,6 +77,7 @@
     <Folder Include="DbContext\" />
     <Folder Include="MemoService\" />
     <Folder Include="UserManagement\" />
+    <Folder Include="NickService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

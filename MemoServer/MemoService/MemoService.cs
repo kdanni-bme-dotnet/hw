@@ -30,6 +30,15 @@ namespace MemoServer
 				}
 			}
 		}
+
+		#region IMemoService implementation
+
+		public void putPublicMemo (string message, string nick, string hash, Uri clientUri)
+		{
+			this.putPublicMemo (message, nick + "[" + hash + "]@" + clientUri.ToString());
+		}
+
+		#endregion
 	}
 }
 
