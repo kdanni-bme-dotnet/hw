@@ -65,6 +65,9 @@
     <Compile Include="UserManagement\AnonymousUser.cs" />
     <Compile Include="MemoService\IMemoService.cs" />
     <Compile Include="Entities\Memo.cs" />
+    <Compile Include="Entities\Peer.cs" />
+    <Compile Include="Entities\Status.cs" />
+    <Compile Include="Entities\UserPeerAssociation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

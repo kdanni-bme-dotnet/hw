@@ -1,4 +1,4 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupItem="DebugClient\DebugClient.csproj" RefactoringSettings.EnableRefactorings="True">
+﻿<Properties GitUserInfo="UsingGIT" StartupItem="MemoServer\MemoServer.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ActiveRuntime="MS.NET" />
   <MonoDevelop.Ide.Workbench ActiveDocument="DebugClient\Program.cs">
     <Files>
