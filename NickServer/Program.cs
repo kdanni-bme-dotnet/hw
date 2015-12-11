@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.Common;
+using MySql.Data.MySqlClient;
 
 namespace NickServer
 {
@@ -7,6 +9,46 @@ namespace NickServer
 		static void Debug ()
 		{
 			Console.WriteLine ("Debug");
+
+
+			using (MemoDbConnection conn = new MemoDbConnection())
+			{
+				conn.BeginTransaction();
+				try { 
+					using (MemoDbContext ctx = new MemoDbContext(conn.Connection, false))
+					{
+						ctx.Database.Log = (string message) => { Console.WriteLine(message); };
+						ctx.Database.UseTransaction(conn.Transaction);
+
+						Memo testMemo = new Memo("Hello", "d");
+						User anon = new User {
+							Username = "Anonymous",
+							Password = "pass",
+							LastOnline = DateTime.UtcNow
+						};
+						Peer peer = new Peer {
+							Address = new Uri("http://localhost:8088").ToString(),
+							MAC_AddressHash = "pass"
+						};
+
+						ctx.Memos.Add(testMemo);
+						ctx.Users.Add(anon);
+						ctx.Peers.Add(peer);
+						anon.Memos.Add(testMemo);
+						ctx.SaveChanges();
+					}
+
+					conn.CommitTransaction();
+				}
+				catch
+				{
+					conn.RollbackTransaction();
+					throw;
+				}
+			}
+
+
+
 		}
 
 		public static void Main (string[] args)
@@ -89,7 +131,6 @@ namespace NickServer
 			Console.WriteLine("\t-d\tdatabase");
 			Console.WriteLine("\t-u\tdatabase user");
 			Console.WriteLine("\t-h\tdisplay this help");
-		}
 		}
 	}
 }

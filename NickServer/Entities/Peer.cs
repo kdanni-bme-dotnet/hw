@@ -14,12 +14,12 @@ namespace NickServer
 			set;
 		}
 
-		public Uri Address {
+		public string Address {
 			get;
 			set;
 		}
 
-		public String MAC_AddressHash {
+		public string MAC_AddressHash {
 			get;
 			set;
 		}
