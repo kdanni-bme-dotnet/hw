@@ -11,6 +11,10 @@ namespace MemoServer
 
 		public DbSet<User> Users{ get; set; }
 
+		public DbSet<Peer> Peers{ get; set; }
+
+		public DbSet<UserPeerAssociation> UserPeerAssociations{ get; set; }
+
 		public MemoDbContext (DbConnection contextString, bool contextOwnsConnection) 
 			: base (contextString, contextOwnsConnection)
 		{
