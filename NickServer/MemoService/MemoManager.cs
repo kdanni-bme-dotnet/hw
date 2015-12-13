@@ -45,7 +45,7 @@ namespace NickServer
 		}
 
 
-		public List<Memo> getMemos(string user)
+		public static List<Memo> getMemos(string user)
 		{
 			List<Memo> memoList = new List<Memo>();
 			using (MemoDbConnection conn = new MemoDbConnection())

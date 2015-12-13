@@ -69,6 +69,10 @@
     <Compile Include="MemoService\MemoManager.cs" />
     <Compile Include="PeerService\IPeerService.cs" />
     <Compile Include="PeerService\PeerService.cs" />
+    <Compile Include="NickService\INickService.cs" />
+    <Compile Include="NickService\NickService.cs" />
+    <Compile Include="MemoService\IMemoService.cs" />
+    <Compile Include="MemoService\MemoService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

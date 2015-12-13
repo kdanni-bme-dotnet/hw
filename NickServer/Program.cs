@@ -1,11 +1,49 @@
 ﻿using System;
 using System.Data.Common;
 using MySql.Data.MySqlClient;
+using System.ServiceModel;
 
 namespace NickServer
 {
 	class MainClass
 	{
+
+		static void Services ()
+		{
+			MemoManager.initAnon ();
+			
+			ServiceHost peerHost = null;
+			ServiceHost nickHost = null;
+			ServiceHost memoHost = null;
+			try {
+				peerHost = new ServiceHost (typeof(PeerService));
+				peerHost.Open ();
+				Console.WriteLine ("PeerService has started up.");
+
+				nickHost = new ServiceHost (typeof(NickService));
+				nickHost.Open();
+				Console.WriteLine ("NickService has started up.");
+
+				memoHost = new ServiceHost (typeof(MemoService));
+				memoHost.Open();
+				Console.WriteLine ("MemoService has started up.");
+
+				Console.ReadLine ();
+			} catch (Exception e) {
+				Console.WriteLine (e);
+			} finally {
+				if (peerHost != null) {
+					peerHost.Close ();
+				}
+				if (nickHost != null) {
+					nickHost.Close ();
+				}
+				if (memoHost != null) {
+					memoHost.Close ();
+				}
+			}
+		}
+
 		static void Debug ()
 		{
 			Console.WriteLine ("Debug");
@@ -148,9 +186,9 @@ namespace NickServer
 			try {
 				//AnonymousUser.initAnon();
 
-				Debug();
+				//Debug();
 
-				Console.Read();
+				Services();
 			}
 			catch(Exception e)
 			{
