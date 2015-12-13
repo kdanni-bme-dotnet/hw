@@ -31,11 +31,11 @@ namespace NickServer
 							MAC_AddressHash = "pass"
 						};
 
-						ctx.Memos.Add(testMemo);
-						ctx.Users.Add(anon);
-						ctx.Peers.Add(peer);
-						anon.Memos.Add(testMemo);
-						ctx.SaveChanges();
+//						ctx.Memos.Add(testMemo);
+//						ctx.Users.Add(anon);
+//						ctx.Peers.Add(peer);
+//						anon.Memos.Add(testMemo);
+//						ctx.SaveChanges();
 					}
 
 					conn.CommitTransaction();
@@ -46,6 +46,37 @@ namespace NickServer
 					throw;
 				}
 			}
+
+			try {
+				NickManager.registerNick ("nickkk", "MAChashMD5");
+				System.Console.WriteLine ("registration OK");
+			} catch (Exception ex) {
+				System.Console.WriteLine (ex.Message);
+			}
+
+			try {
+				NickManager.refreshNick ("nickkk", "MAChashMD5");
+				System.Console.WriteLine ("refresh OK");
+			} catch (Exception ex) {
+				System.Console.WriteLine (ex.Message);
+			}
+
+			try {
+				NickManager.refreshNick ("nickkkkk", "MAChashMD5");
+				System.Console.WriteLine ("refresh OK");
+			} catch (Exception ex) {
+				System.Console.WriteLine (ex.Message);
+			}
+			System.Console.WriteLine ();
+
+
+			try {
+				PeerManager.registerPeer("ddsgsgsdffcdsfg", new Uri ("http://localhost:53215") );
+				System.Console.WriteLine ("peer registration OK");
+			} catch (Exception ex) {
+				System.Console.WriteLine (ex.Message);
+			}
+			System.Console.WriteLine ();
 
 
 
