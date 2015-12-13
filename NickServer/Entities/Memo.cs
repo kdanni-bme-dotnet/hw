@@ -28,6 +28,8 @@ namespace NickServer
 			set;
 		}
 
+		public Memo(){}
+
 		public Memo(string message, string sender)
 		{
 			this.Timestamp = DateTime.UtcNow;

@@ -40,6 +40,9 @@ namespace NickServer
 
 			using (MemoDbConnection conn = new MemoDbConnection())
 			{	
+				try {
+					refreshNick(nick, macHash);
+				} catch {}
 				conn.BeginTransaction();
 				try { 
 					using (MemoDbContext ctx = new MemoDbContext(conn.Connection, false))
