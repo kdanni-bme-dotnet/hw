@@ -82,8 +82,8 @@ namespace NickServer
 
 			try {
 				MemoManager.putMemo("hali", "Anonymous", "d");
-				MemoManager.putMemo("nickkk", "Anonymous", "d");
-				MemoManager.putMemo("nickkkkkkkkkk", "Anonymous", "d");
+				MemoManager.putMemo("hali", "nickkk", "d");
+				MemoManager.putMemo("hali", "nickkkkkkkkkk", "d");
 				System.Console.WriteLine ("Memo added!");
 			} catch (Exception ex) {
 				System.Console.WriteLine (ex.Message);
