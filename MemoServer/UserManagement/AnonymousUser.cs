@@ -12,10 +12,13 @@ namespace MemoServer
 			using (MemoDbConnection conn = new MemoDbConnection()) {	
 				using (MemoDbContext ctx = new MemoDbContext(conn.Connection, false))
 				{
-					var q = from u in ctx.Users where
-					         u.Username.Equals (ANON_NAME)
-							select u;
+					//var q = from u in ctx.Users where
+					//        u.Username.Equals (ANON_NAME)
+					//		select u;
 
+					var q = from u in ctx.Users	select u;
+
+					System.Console.WriteLine (q == null);
 					if (q.Count() < 1) {
 						var anon = new User ();
 						anon.Username = ANON_NAME;

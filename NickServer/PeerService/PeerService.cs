@@ -12,12 +12,22 @@ namespace NickServer
 
 		public bool registerPeer (string hash, Uri clientUri)
 		{
-			PeerManager.registerPeer(hash,clientUri);
+			try {
+				PeerManager.registerPeer (hash, clientUri);
+				return true;
+			} catch {
+				return false;
+			}
 		}
 
 		public bool kickoutPeer (string hash, string kickerHash)
 		{
-			PeerManager.kickoutPeer (hash, kickerHash);
+			try {
+				PeerManager.kickoutPeer (hash, kickerHash);
+				return true;
+			} catch {
+				return false;
+			}
 		}
 
 		public System.Collections.Generic.List<Uri> getPeerList ()

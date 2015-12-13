@@ -7,7 +7,7 @@ namespace NickServer
 	public interface INickService
 	{
 		[OperationContract]
-		void registerNick (string nick, string hash, Uri clientUri);
+		bool registerNick (string nick, string hash, Uri clientUri);
 
 
 	}

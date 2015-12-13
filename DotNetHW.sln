@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugServer", "DebugServer\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugClient", "DebugClient\DebugClient.csproj", "{582B7865-CA3A-4EAB-B002-38931726B292}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NickServer", "NickServer\NickServer.csproj", "{C08838D3-07ED-417C-BA5E-50A73BDC4606}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -52,6 +54,12 @@ Global
 		{B9BECB7B-90F0-4D2B-91CF-07CCBD5DD6B5}.Default|Any CPU.Build.0 = Debug|x86
 		{B9BECB7B-90F0-4D2B-91CF-07CCBD5DD6B5}.Release|x86.ActiveCfg = Release|x86
 		{B9BECB7B-90F0-4D2B-91CF-07CCBD5DD6B5}.Release|x86.Build.0 = Release|x86
+		{C08838D3-07ED-417C-BA5E-50A73BDC4606}.Debug|x86.ActiveCfg = Debug|x86
+		{C08838D3-07ED-417C-BA5E-50A73BDC4606}.Debug|x86.Build.0 = Debug|x86
+		{C08838D3-07ED-417C-BA5E-50A73BDC4606}.Default|Any CPU.ActiveCfg = Debug|x86
+		{C08838D3-07ED-417C-BA5E-50A73BDC4606}.Default|Any CPU.Build.0 = Debug|x86
+		{C08838D3-07ED-417C-BA5E-50A73BDC4606}.Release|x86.ActiveCfg = Release|x86
+		{C08838D3-07ED-417C-BA5E-50A73BDC4606}.Release|x86.Build.0 = Release|x86
 		{CDE2A151-293E-4368-82B8-03401635545F}.Debug|x86.ActiveCfg = Debug|x86
 		{CDE2A151-293E-4368-82B8-03401635545F}.Debug|x86.Build.0 = Debug|x86
 		{CDE2A151-293E-4368-82B8-03401635545F}.Default|Any CPU.ActiveCfg = Debug|x86

@@ -50,7 +50,6 @@ namespace NickServer
 							select p;
 
 						if (qp.Count () > 1) {
-							conn.CommitTransaction ();
 							throw new PeerAlreadyRegistratedException();
 						}
 						Peer peer;
@@ -97,7 +96,6 @@ namespace NickServer
 							select p;
 
 						if (qp.Count () != 1) {
-							conn.CommitTransaction ();
 							throw new PeerPasswordException();
 						}
 

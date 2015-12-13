@@ -149,6 +149,8 @@ namespace NickServer
 				//AnonymousUser.initAnon();
 
 				Debug();
+
+				Console.Read();
 			}
 			catch(Exception e)
 			{
@@ -160,7 +162,7 @@ namespace NickServer
 				System.Environment.Exit(1);
 			}
 			System.Console.WriteLine ("Memo Server Closing...");
-			Console.Read (); 
+			//Console.Read (); 
 		}
 
 		private static void Usage() {

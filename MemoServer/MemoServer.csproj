@@ -54,6 +54,7 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -64,12 +65,12 @@
     <Compile Include="UserManagement\AnonymousUser.cs" />
     <Compile Include="Entities\Memo.cs" />
     <Compile Include="Entities\Peer.cs" />
-    <Compile Include="Entities\Status.cs" />
-    <Compile Include="Entities\UserPeerAssociation.cs" />
     <Compile Include="NickService\INickService.cs" />
     <Compile Include="NickService\NickService.cs" />
     <Compile Include="MemoService\IMemoService.cs" />
     <Compile Include="MemoService\MemoService.cs" />
+    <Compile Include="PeerService\IPeerService.cs" />
+    <Compile Include="PeerService\PeerService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -78,6 +79,7 @@
     <Folder Include="MemoService\" />
     <Folder Include="UserManagement\" />
     <Folder Include="NickService\" />
+    <Folder Include="PeerService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
