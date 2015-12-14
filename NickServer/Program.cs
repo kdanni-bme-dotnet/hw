@@ -181,7 +181,7 @@ namespace NickServer
 				}
 			}
 
-			Console.WriteLine ("Memo service starting up...");
+			Console.WriteLine ("Nick server starting up...");
 
 			try {
 				//AnonymousUser.initAnon();
@@ -199,8 +199,8 @@ namespace NickServer
 				Console.Read ();
 				System.Environment.Exit(1);
 			}
-			System.Console.WriteLine ("Memo Server Closing...");
-			//Console.Read (); 
+			System.Console.WriteLine ("Nick server closing...");
+			Console.Read (); 
 		}
 
 		private static void Usage() {
